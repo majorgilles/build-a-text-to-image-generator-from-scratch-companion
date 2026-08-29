@@ -1,0 +1,19 @@
+.idea/
+.ipynb_checkpoints/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ruff_cache/
+.DS_Store
+
+# Local datasets, downloaded weights, and generated outputs
+data/
+checkpoints/
+artifacts/
+*.ckpt
+*.pt
+*.pth
+
+# Personally licensed source material must remain local
+*.pdf

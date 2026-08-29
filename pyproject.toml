@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "build-a-text-to-image-generator-from-scratch-companion"
+version = "0.1.0"
+description = "Follow-along workspace for Build a Text-to-Image Generator (from Scratch)."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "albumentations>=2.0",
+    "datasets>=4.0",
+    "diffusers>=0.37",
+    "einops>=0.8",
+    "ftfy>=6.3",
+    "imageio>=2.37",
+    "ipywidgets>=8.1",
+    "jupyterlab>=4.4",
+    "kagglehub>=1.0",
+    "matplotlib>=3.10",
+    "numpy>=2.0",
+    "omegaconf>=2.3",
+    "opencv-python>=4.13",
+    "pandas>=3.0",
+    "pillow>=12.0",
+    "pytorch-lightning>=2.6",
+    "regex>=2026.2",
+    "requests>=2.32",
+    "spacy>=3.8",
+    "timm>=1.0",
+    "torch>=2.13.0",
+    "torchvision>=0.28.0",
+    "tqdm>=4.67",
+    "transformers>=4.53,<5",
+]
+
+[project.urls]
+Repository = "https://github.com/majorgilles/build-a-text-to-image-generator-from-scratch-companion"
+Book = "https://www.manning.com/books/build-a-text-to-image-generator-from-scratch"
+SourceCode = "https://github.com/markhliu/txt2img"
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+torchvision = { index = "pytorch-cu130" }
+
+[dependency-groups]
+dev = [
+    "nbdev>=3.3",
+    "pytest>=8.3",
+    "ruff>=0.16",
+]
+
+[tool.setuptools.packages.find]
+include = ["build_a_text_to_image_generator_from_scratch_companion*"]
+
+[tool.nbdev]
+nbs_path = "notebooks"
+lib_path = "build_a_text_to_image_generator_from_scratch_companion"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "UP"]
