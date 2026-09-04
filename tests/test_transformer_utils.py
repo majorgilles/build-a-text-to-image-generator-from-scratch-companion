@@ -20,9 +20,7 @@ from build_a_text_to_image_generator_from_scratch_companion.utils.transformer im
 
 def test_subsequent_mask_hides_future_positions() -> None:
     """Only the current and earlier positions should be visible."""
-    expected = torch.tensor(
-        [[[True, False, False], [True, True, False], [True, True, True]]]
-    )
+    expected = torch.tensor([[[True, False, False], [True, True, False], [True, True, True]]])
 
     assert torch.equal(subsequent_mask(3), expected)
 
@@ -33,9 +31,7 @@ def test_make_std_mask_combines_padding_and_causal_masks() -> None:
 
     mask = make_std_mask(target, padding_id=0)
 
-    expected = torch.tensor(
-        [[[True, False, False], [True, True, False], [True, True, False]]]
-    )
+    expected = torch.tensor([[[True, False, False], [True, True, False], [True, True, False]]])
     assert torch.equal(mask, expected)
 
 
@@ -61,9 +57,7 @@ def test_scaled_dot_product_attention_has_expected_shape_and_probabilities() -> 
 
     assert values.shape == (1, 2, 2)
     assert probabilities.shape == (1, 2, 2)
-    torch.testing.assert_close(
-        probabilities.sum(dim=-1), torch.ones((1, 2))
-    )
+    torch.testing.assert_close(probabilities.sum(dim=-1), torch.ones((1, 2)))
 
 
 def test_multihead_attention_rejects_incompatible_dimensions() -> None:

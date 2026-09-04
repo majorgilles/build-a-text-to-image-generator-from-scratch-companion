@@ -56,9 +56,7 @@ def test_attention_head_normalizes_each_query_distribution() -> None:
 
     assert output.shape == (2, 5, 4)
     assert probabilities.shape == (2, 5, 5)
-    torch.testing.assert_close(
-        probabilities.sum(dim=-1), torch.ones((2, 5))
-    )
+    torch.testing.assert_close(probabilities.sum(dim=-1), torch.ones((2, 5)))
 
 
 def test_classifier_returns_logits_and_optional_attention_maps() -> None:
