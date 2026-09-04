@@ -70,3 +70,7 @@ target-version = "py312"
 
 [tool.ruff.lint]
 select = ["B", "E", "F", "I", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+# nbdev places generated metadata before exported imports and formats __all__ itself.
+"build_a_text_to_image_generator_from_scratch_companion/utils/*.py" = ["E402", "E501"]
