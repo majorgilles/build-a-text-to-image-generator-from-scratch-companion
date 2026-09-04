@@ -52,17 +52,12 @@ torchvision = { index = "pytorch-cu130" }
 
 [dependency-groups]
 dev = [
-    "nbdev>=3.3",
     "pytest>=8.3",
     "ruff>=0.16",
 ]
 
 [tool.setuptools.packages.find]
 include = ["build_a_text_to_image_generator_from_scratch_companion*"]
-
-[tool.nbdev]
-nbs_path = "notebooks"
-lib_path = "build_a_text_to_image_generator_from_scratch_companion"
 
 [tool.ruff]
 line-length = 100
@@ -72,5 +67,5 @@ target-version = "py312"
 select = ["B", "E", "F", "I", "UP"]
 
 [tool.ruff.lint.per-file-ignores]
-# nbdev places generated metadata before exported imports and formats __all__ itself.
+# Modules declare __all__ before their imports; shape comments may exceed the line length.
 "build_a_text_to_image_generator_from_scratch_companion/utils/*.py" = ["E402", "E501"]

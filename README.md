@@ -29,15 +29,9 @@ The project declares the libraries used across the book, including PyTorch's vis
 
 Keep canonical vocabulary in [`glossary.md`](glossary.md).
 
-## Reusing notebook-defined code
+## Reusable utilities
 
-This repository uses [nbdev](https://nbdev.fast.ai/) to export selected notebook cells into importable modules. After changing any `#| export` cell, run:
-
-```bash
-uv run nbdev-export
-```
-
-Files under `build_a_text_to_image_generator_from_scratch_companion/` are generated from notebooks and should not be edited manually.
+`build_a_text_to_image_generator_from_scratch_companion/utils/` contains typed, documented ports of the upstream [`txt2img`](https://github.com/markhliu/txt2img) utilities. Chapter notebooks import from this package instead of redefining the code.
 
 ## Chapters
 

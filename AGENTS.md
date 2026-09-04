@@ -28,9 +28,8 @@
 - Make each notebook read as one continuous chapter and end it with one consolidated summary.
 - After editing a notebook, validate its JSON, ensure cell IDs are unique, and check Python code-cell syntax.
 
-## nbdev exports
+## Package modules
 
-- Treat notebooks as the source of truth for reusable code.
-- Export reusable definitions to the most appropriate package module.
-- Run `uv run nbdev-export` after changing exported definitions.
-- Do not edit generated package modules manually.
+- `build_a_text_to_image_generator_from_scratch_companion/utils/` holds hand-written ports of the
+  upstream `txt2img` utilities; edit them directly and keep the chapter notebooks importing from them.
+- Run `uv run ruff format` and `uv run ruff check` after editing a module.

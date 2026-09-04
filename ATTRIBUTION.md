@@ -1,9 +1,8 @@
 # Attribution
 
 The reusable utilities under
-`build_a_text_to_image_generator_from_scratch_companion/utils/` (authored in the
-`notebooks/utils/` nbdev notebooks) are ported and adapted from the companion
-source code for *Build a Text-to-Image Generator (from Scratch)*:
+`build_a_text_to_image_generator_from_scratch_companion/utils/` are ported and
+adapted from the companion source code for *Build a Text-to-Image Generator (from Scratch)*:
 
 - Upstream project: https://github.com/markhliu/txt2img
 - Copyright (c) 2024 Mark Liu
