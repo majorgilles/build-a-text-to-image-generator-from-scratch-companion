@@ -9,6 +9,9 @@ __pycache__/
 
 # Local datasets, downloaded weights, and generated outputs
 data/
+notebooks/files/
+notebooks/cifar-10-batches-py/
+notebooks/cifar-10-python.tar.gz
 checkpoints/
 artifacts/
 *.ckpt
